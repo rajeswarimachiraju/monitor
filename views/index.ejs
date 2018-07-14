@@ -1,0 +1,45 @@
+<html>
+    <style>
+        body{
+            background-image:url('alcohol.jpg') ; 
+            background-size: 1400px 700px;
+            background-repeat: no-repeat
+        }
+        div{
+            height:50%;
+        }
+    </style>
+        <body>
+     <div class="container" style="background-color:darkkhaki ;overflow-y: scroll;" >     
+    <ul class="submit ">
+        <table class="table table-bordered">
+                <tr>
+                        <th width="100"  >Application name</th>
+                        <th width="150">Status</th>
+                        <th width="150">MSTR cube refresh</th>
+                        <th width="150">SSAS refresh</th>
+                        <th width="150">ETL status</th>
+                        <th width="150">Owner name</th>
+                        <th width="150">Reports availability</th>
+                        <th width="300">Last refreshed on</th>
+                        </tr>
+    <% for(var i=0; i<submit.length; i++) {%>
+    <tr class="submit">
+        <td><span><%= submit[i].Appname %></span> </td>
+    <td><span><%= submit[i].status %></span> </td>
+    <td><span><%= submit[i].mstr %></span></td>
+    <td><span><%= submit[i].SSAS %></span></td>
+    <td><span><%= submit[i].ETL %></span></td>
+    <td><span><%= submit[i].owner %></span></td>
+    <td><span><%= submit[i].report %></span></td>
+    
+    <td><span><%= submit[i].time %></span></td>
+    </tr>
+   
+    <% } 
+    %>
+    </ul>
+</table>
+</div>  
+</body>
+    </html>

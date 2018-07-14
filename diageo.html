@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <title>Diageo Application health dashboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+ table th, table td
+  { overflow: hidden;
+    font-weight: bolder;
+  }
+table {
+    border-collapse:collapse;
+    table-layout: fixed; 
+}
+    th
+{
+    background-color:dimgray;
+    color:honeydew;
+    }
+tr{
+  background-color:rgb(255, 255, 251);
+
+}
+body{
+   background-image:url("Diageo.jpg");
+   background-size: 1400px 700px;
+   background-repeat: no-repeat;
+}
+label
+{
+    font-weight: bolder;
+    color:ghostwhite
+}
+footer {
+    background-color:black;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 5px;
+    font-weight: bolder;
+    width:100%;
+}
+.container{
+  border: 2px solid blueviolet;
+    padding: 10px;
+    background-color: black;
+}
+  </style>
+     </head>
+     <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+         <ul class="nav navbar-nav">
+           
+           <li class="active"><a href="/" style= "font-weight: bolder; color: lightyellow ">Dashboard</a></li>
+             <li ><a href="/applist" style="font-weight: bolder; color: lightyellow ">List of Applications</a></li>
+                <li ><a href="/submit" style="font-weight: bolder; color: lightyellow ">Current Status</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" >
+                      <ul class="nav navbar-nav">
+                       </ul>
+                          </form>    
+                     </div>
+    </nav>
+    <div class="container" >
+    <div class="container-fluid col-sm-2"></div>
+       <form method="POST" action='/submit' >
+            <div  class="container-fluid col-sm-2">
+               <label for ="app name">Appname</label>
+              <br>
+              <select id="select1" name=Appname  class="drop">
+                    <option value="NA">-</option>
+                    <option width="200" class="opt1"  value="Apollo">Apollo</option>
+                    <option  value="BPM BIR">BPM BIR</option>
+                    <option   value="Cash Apps">CashApps</option>
+                    <option  value="Cash CUBE">Cash Cube</option>
+                    <option  value="Canada KPI">Canada KPI</option>
+                  </select>
+                  <br>
+              <label for ="name">status</label>
+<br>
+            <select id="select1" name=status  class="drop">
+                    <option value="NA">-</option>
+                    <option width="200" class="opt1"  value="NotYet Started">Not yet Started</option>
+                    <option  value="RUNNING">Running</option>
+                    <option   value="COMPLETED">Completed</option>
+                    <option  value="FAILED">Failed</option>
+                  </select>
+                          </div>
+            <div  class="container-fluid col-sm-2">
+                    <label for ="MSTR">MSTR Cube refresh</label>
+                  <br> 
+              <select id="select1" name=mstr  class="drop">
+                    <option value="NA">-</option>
+                    <option width="200" class="opt1"  value="NotYet Started">Not yet Started</option>
+                    <option  value="RUNNING">Running</option>
+                    <option   value="COMPLETED">Completed</option>
+                    <option  value="FAILED">Failed</option>
+                  </select>
+                  <br>
+                    <label for ="SSAS refresh">SSAS refresh</label>
+                  <br>
+              <select id="select1" name=SSAS  class="drop">
+                    <option value="NA">-</option>
+                    <option width="200" class="opt1"  value="NotYet Started">Not yet Started</option>
+                    <option  value="RUNNING">Running</option>
+                    <option   value="COMPLETED">Completed</option>
+                    <option  value="FAILED">Failed</option>
+                  </select>
+                  </div>
+          <div  class="container-fluid col-sm-2">
+                   <label for ="ETL">ETL status</label>
+                 <br>
+              <select id="select1" name=ETL  class="drop">
+                    <option value="NA">-</option>
+                    <option width="200" class="opt1"  value="NotYet Started">Not yet Started</option>
+                    <option  value="RUNNING">Running</option>
+                    <option   value="COMPLETED">Completed</option>
+                    <option  value="FAILED">Failed</option>
+                  </select>
+                  <br>
+                   <label for ="owner">Owner name</label>
+                  <br>
+              <select id="select1" name=owner  class="drop">
+                    <option value="NA">-</option>
+                    <option width="200" class="opt1"  value="Raji">Rajeswari</option>
+                    <option  value="Tulasi">Tulasi</option>
+                    <option   value="Mallesh">Mallesh</option>
+                    <option  value="Mahesh">Mahesh</option>
+                  </select>
+                 </div>
+
+                <div  class="container-fluid col-sm-2">
+                        <label for ="reports">Reports Availability</label>
+                        <br>
+              <select id="select1" name=report  class="drop">
+                    <option value="NA">-</option>
+                    <option width="200" class="opt1"  value="NotYet started">Not yet Started</option>
+                    <option  value="RUNNING">Running</option>
+                    <option   value="COMPLETED">Completed</option>
+                    <option  value="FAILED">Failed</option>
+                  </select>
+                  <br>
+                        <label for ="time">Last updated time in UKT</label>
+                        <br>
+                        <input type="text" name=time>
+                     </div>
+                     <br><br><br>
+                     <br><br><br>
+                     <div class="wrapper" style="position: absolute; left:50% ;text-align:center">
+                       <button type="submit" style="background-color: lightsteelblue" onclick="sub()" >Submit</button>
+                     </div>
+                     
+</form>
+</div>
+
+<div class="container-fluid">        
+    <footer>
+        <img src="infy.png" width="50px" height="40px">
+               Developed by Infosys-BAU Support
+           </footer>
+          </div> 
+          <script >
+            function sub()
+            {
+                window.alert("Details are submitted successfully");
+            }
+            
+          </script>
+
+            </body>
+     </html>
